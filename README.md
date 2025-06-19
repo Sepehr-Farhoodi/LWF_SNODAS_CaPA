@@ -8,7 +8,7 @@ This package calculates liquid water flux using the formula:
 
 LWF(t) = SWE(t-1) - SWE(t) + P(t)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Clone the repository to your local machine:
 
