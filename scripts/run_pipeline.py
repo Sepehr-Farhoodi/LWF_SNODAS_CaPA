@@ -161,7 +161,7 @@ def main(start_date, end_date):
         print()
         
         print("=" * 60)
-        print("Pipeline completed successfully! 🎉")
+        print("Pipeline completed successfully!")
         print("=" * 60)
         
     except KeyboardInterrupt:
