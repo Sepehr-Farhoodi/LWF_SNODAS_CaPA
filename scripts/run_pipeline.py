@@ -45,9 +45,9 @@ def main(start_date, end_date):
     
     # Configuration - use the command line arguments if provided, otherwise use the default values
     if start_date is None:
-        start_date = "2025-06-01"
+        start_date = "2025-04-02"
     if end_date is None:
-        end_date = "2025-06-04"
+        end_date = "2025-06-17"
 
     script_dir = Path(__file__).parent
     output_dir = script_dir.parent / "output"
@@ -161,7 +161,7 @@ def main(start_date, end_date):
         print()
         
         print("=" * 60)
-        print("Pipeline completed successfully! 🎉")
+        print("Pipeline completed successfully!")
         print("=" * 60)
         
     except KeyboardInterrupt:
@@ -226,8 +226,8 @@ if __name__ == "__main__":
     import argparse
     
     parser = argparse.ArgumentParser(description="Liquid Water Flux Calculation Pipeline")
-    parser.add_argument("--start-date", default="2025-06-01", help="Start date (YYYY-MM-DD)")
-    parser.add_argument("--end-date", default="2025-06-04", help="End date (YYYY-MM-DD)")
+    parser.add_argument("--start-date", default="2025-04-02", help="Start date (YYYY-MM-DD)")
+    parser.add_argument("--end-date", default="2025-06-17", help="End date (YYYY-MM-DD)")
     parser.add_argument("--lat", type=float, help="Latitude for single location analysis")
     parser.add_argument("--lon", type=float, help="Longitude for single location analysis")
     parser.add_argument("--single-location", action="store_true", help="Run for single location only")
