@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+schedules:
+- cron: "0 14 * * *"  # Runs daily at 2 PM UTC (adjust as needed)
+  displayName: Daily LWF Run
+  branches:
+    include:
+      - main
+  always: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.11.11'
+    addToPath: true
+
+- script: |
+    pip install -r requirements.txt
+    python scripts/run_pipeline.py
+  displayName: 'Run LWF_SNODAS_CaPA Script'
+
+- script: |
+    echo "✅ LWF job completed at $(date)"
+  displayName: 'Job Completion Log'
